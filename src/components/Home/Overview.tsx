@@ -76,7 +76,7 @@ const Overview = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center  mb-10">
           <div className="md:col-span-1 border-l-2 border-gray-700 pl-4 md:pl-6 max-h-80 overflow-y-auto w-1/2">
             {vehicleData.map((vehicle) => (
               <div
@@ -98,7 +98,7 @@ const Overview = () => {
             <div className="w-full max-w-lg aspect-[4/3] relative">
              <video src={getActiveVideo()} autoPlay  muted className="w-full h-full object-contain" />
             </div>
-            <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4 mt-6 md:mt-8">
+            <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4 ">
               {(activeVehicle === "passenger" ? viewOptions : commercialViewOptions).map((option) => (
                 <button
                   key={option.id}

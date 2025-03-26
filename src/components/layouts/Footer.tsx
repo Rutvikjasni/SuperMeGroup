@@ -13,7 +13,7 @@ type FooterSection = {
 
 const Footer: React.FC = () => {
   return (
-    <footer className="text-black bg-footer p-6 md:p-10 lg:p-20 bg-no-repeat border-t border-opacity-10 border-gray-100">
+    <footer className="text-black bg-footer px-6 pt-6 pb-2 md:p-10 lg:p-20 bg-no-repeat border-t border-opacity-10 border-gray-100">
       <div className="w-full max-w-screen-xl mx-auto">
         <div className="flex flex-col items-center md:items-start">
           <a href="/">
@@ -30,8 +30,8 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        <div className="flex flex-col sm:flex-row justify-between items-center pt-10 sm:pt-16 text-center sm:text-left">
-          <h6 className="text-sm text-black">©2024. All Rights Reserved.</h6>
+        <div className="flex flex-col sm:flex-row justify-between items-center pt-5 sm:pt-16 text-center sm:text-left">
+          <h6 className="text-sm text-black">©2025. All Rights Reserved.</h6>
           <h6 className="text-sm text-black mt-2 sm:mt-0">Supreme House, 110, 16th Road, Chembur, Mumbai – 400071.</h6>
         </div>
       </div>
