@@ -96,17 +96,7 @@ const Overview = () => {
 
           <div className="md:col-span-1 flex flex-col items-center">
             <div className="w-full max-w-lg aspect-[4/3] relative">
-             {/* <video src={getActiveVideo()} autoPlay  muted className="w-full h-full object-contain" /> */}
-              <video
-                autoPlay
-                muted
-                className="h-full w-full object-contain "
-              >
-                <source
-                  src={getActiveVideo()}
-                  type="video/mp4"
-                />
-              </video>
+             <video src={getActiveVideo()} autoPlay  muted className="w-full h-full object-contain" />
             </div>
             <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4 mt-6 md:mt-8">
               {(activeVehicle === "passenger" ? viewOptions : commercialViewOptions).map((option) => (
