@@ -10,11 +10,11 @@ const HeroSection: React.FC = () => {
           playsInline
           loop
           muted
-          poster="https://supreme-group.vercel.app/static/media/automotive.a1a1a562cc7e39699232.webp"
+          poster="automotive.webp"
           className="h-full w-full object-cover object-center"
         >
           <source
-            src="https://supreme-group.vercel.app/static/media/automotive.224e7418884105595114.mp4"
+            src="automotive.mp4"
             type="video/mp4"
           />
         </video>
