@@ -1,7 +1,22 @@
 import { useState } from "react";
 
-//Data Colleaction
-const vehicleData = [
+// Define types
+type Vehicle = {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+};
+
+type ViewOption = {
+  id: string;
+  label: string;
+  videoLink: string;
+  icon: string;
+};
+
+// Data Collection
+const vehicleData: Vehicle[] = [
   {
     id: "passenger",
     title: "Passenger vehicles",
@@ -16,7 +31,7 @@ const vehicleData = [
   },
 ];
 
-const viewOptions = [
+const viewOptions: ViewOption[] = [
   { id: "complete", label: "Complete body", videoLink: "/PassengerVehicles/Complete_body.mp4", icon: "/PassengerVehicles/Complete_body.svg" },
   { id: "front", label: "Front", videoLink: "/PassengerVehicles/Front.mp4", icon: "/PassengerVehicles/Front.svg" },
   { id: "cabin", label: "Cabin", videoLink: "/PassengerVehicles/Cabin.mp4", icon: "/PassengerVehicles/cabin.png" },
@@ -24,18 +39,18 @@ const viewOptions = [
   { id: "exterior", label: "Exterior", videoLink: "/PassengerVehicles/Exterior.mp4", icon: "/PassengerVehicles/Exterior.svg" },
 ];
 
-const commercialViewOptions = [
+const commercialViewOptions: ViewOption[] = [
   { id: "completeBody", label: "Complete Body", videoLink: "/CommercialVehicles/Complete_body.mp4", icon: "/CommercialVehicles/Complete_body.svg" },
   { id: "engine", label: "Engine", videoLink: "/CommercialVehicles/Commercial-Engine.mp4", icon: "/CommercialVehicles/Engine.svg" },
   { id: "cabin", label: "Cabin", videoLink: "/CommercialVehicles/Commercial-Cabin.mp4", icon: "/CommercialVehicles/cabin.svg" },
 ];
 
 const Overview = () => {
-  const [activeVehicle, setActiveVehicle] = useState("passenger");
-  const [activeView, setActiveView] = useState("complete");
-  const [commercialView, setCommercialView] = useState("completeBody");
+  const [activeVehicle, setActiveVehicle] = useState<"passenger" | "commercial">("passenger");
+  const [activeView, setActiveView] = useState<string>("complete");
+  const [commercialView, setCommercialView] = useState<string>("completeBody");
 
-  const handleVehicleChange = (id:string) => {
+  const handleVehicleChange = (id: "passenger" | "commercial") => {
     setActiveVehicle(id);
     if (id === "passenger") {
       setActiveView("complete");
@@ -44,7 +59,13 @@ const Overview = () => {
     }
   };
 
-  //start Jsx
+  const getActiveVideo = () => {
+    if (activeVehicle === "passenger") {
+      return viewOptions.find((opt) => opt.id === activeView)?.videoLink ?? viewOptions[0].videoLink;
+    }
+    return commercialViewOptions.find((opt) => opt.id === commercialView)?.videoLink ?? commercialViewOptions[0].videoLink;
+  };
+
   return (
     <section className="min-h-screen bg-black py-10 md:py-20">
       <div className="container mx-auto px-4 md:px-8">
@@ -65,7 +86,7 @@ const Overview = () => {
                     ? "text-white bg-gray-800"
                     : "text-gray-500 hover:text-gray-300"
                 }`}
-                onClick={() => handleVehicleChange(vehicle.id)}
+                onClick={() => handleVehicleChange(vehicle.id as "passenger" | "commercial")}
               >
                 <h3 className="text-lg md:text-2xl font-medium mb-2">{vehicle.title}</h3>
                 <p className="text-sm md:text-base">{vehicle.description}</p>
@@ -75,15 +96,7 @@ const Overview = () => {
 
           <div className="md:col-span-1 flex flex-col items-center">
             <div className="w-full max-w-lg aspect-[4/3] relative">
-              <video
-                src={
-                  activeVehicle === "passenger"
-                    ? viewOptions.find((opt) => opt.id === activeView)?.videoLink || viewOptions[0].videoLink
-                    : commercialViewOptions.find((opt) => opt.id === commercialView)?.videoLink || commercialViewOptions[0].videoLink
-                }
-                autoPlay
-                className="w-full h-full object-contain "
-              />
+              <video src={getActiveVideo()} autoPlay className="w-full h-full object-contain" />
             </div>
 
             <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4 mt-6 md:mt-8">

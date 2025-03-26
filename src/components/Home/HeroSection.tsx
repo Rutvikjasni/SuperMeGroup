@@ -1,11 +1,42 @@
-const HeroSection = () => {
-    return (
-      <section className="bg-gray-600 text-white h-screen flex flex-col justify-center items-center text-center px-6">
-        <p className="text-sm">Performance in motion</p>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold mt-2">Soft Trims and NVH Solutions</h1>
-        <p className="text-lg sm:text-xl mt-2">for seamless rides</p>
-      </section>
-    );
-  };
+import React from "react";
 
-  export default HeroSection
+const HeroSection: React.FC = () => {
+  return (
+    <section className="relative min-h-[450px] lg:h-screen overflow-hidden bg-blueDark">
+      {/* Background Video */}
+      <div className="absolute inset-0">
+        <video
+          autoPlay
+          playsInline
+          loop
+          muted
+          poster="https://supreme-group.vercel.app/static/media/automotive.a1a1a562cc7e39699232.webp"
+          className="h-full w-full object-cover object-center"
+        >
+          <source
+            src="https://supreme-group.vercel.app/static/media/automotive.224e7418884105595114.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+
+      {/* Content */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center w-11/12 mx-auto gap-4 px-4 md:px-8">
+        <span className="sg-translate font-light text-lg md:text-xl xl:text-2xl text-white leading-snug">
+          Driven by performance
+        </span>
+        <h2 className="sg-translate text-white font-light leading-tight text-xl md:text-2xl xl:text-3xl">
+          <span className="font-semibold">
+            Soft trims and <span className="text-blue">NVH solutions</span>
+          </span>
+          <br className="hidden md:block" /> for seamless rides
+        </h2>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;

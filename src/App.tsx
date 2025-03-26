@@ -13,7 +13,7 @@ function App() {
       <Router>
               <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="*" element={<NotFound />} /> {/* 404 Page */}
+                    <Route path="*" element={<NotFound />} /> 
                 </Routes>
         </Router>
     </Layout>
@@ -22,4 +22,3 @@ function App() {
 }
 
 export default App
-  

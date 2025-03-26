@@ -15,11 +15,17 @@ const Header: React.FC = () => {
 
       {/* Nav Items */}
       <div className="flex items-center space-x-4 md:space-x-6">
-        <button className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm md:text-base">
+        <button className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm md:text-base" >
           Contact Us
         </button>
-        <span className="cursor-pointer text-sm md:text-base">in</span>
-        <span className="cursor-pointer text-sm md:text-base">ENG</span>
+        <a
+          href="https://www.linkedin.com/in/rutvik-jasani-8b0404239"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cursor-pointer text-lg font-semibold md:text-base"
+        >
+          in
+        </a>
       </div>
     </header>
   );
