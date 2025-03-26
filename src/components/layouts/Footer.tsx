@@ -1,5 +1,4 @@
 import React from "react";
-import SupremeLogo from "../../../public/Logo.svg";
 
 type FooterLink = {
   name: string;
@@ -19,7 +18,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col items-center md:items-start">
           <a href="/">
             <img
-              src={SupremeLogo}
+              src="Logo.svg"
               className="h-8 sm:h-10 md:h-12 lg:h-14"
               alt="Supreme logo"
               title="logo"

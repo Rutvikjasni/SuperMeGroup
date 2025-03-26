@@ -17,17 +17,17 @@ const vehicleData = [
 ];
 
 const viewOptions = [
-  { id: "complete", label: "Complete body", videoLink: "https://supreme-group.vercel.app/static/media/Passenger%20Alpha.bc06b347f5b526ad9a60.mp4", icon: "/PassengerVehicles/Complete_body.svg" },
-  { id: "front", label: "Front", videoLink: "https://supreme-group.vercel.app/static/media/Front.8f5fda304d3095ab6b02.mp4", icon: "/PassengerVehicles/Front.svg" },
-  { id: "cabin", label: "Cabin", videoLink: "https://supreme-group.vercel.app/static/media/Cabin.3260d3e4f52b3804dae5.mp4", icon: "/PassengerVehicles/cabin.png" },
-  { id: "trunk", label: "Trunk", videoLink: "https://supreme-group.vercel.app/static/media/Trunk.54bfaa734c0395172c08.mp4", icon: "/PassengerVehicles/Trunk.svg" },
-  { id: "exterior", label: "Exterior", videoLink: "https://supreme-group.vercel.app/static/media/Exterior.a127ebb308e655c7e32c.mp4", icon: "/PassengerVehicles/Exterior.svg" },
+  { id: "complete", label: "Complete body", videoLink: "/PassengerVehicles/Complete_body.mp4", icon: "/PassengerVehicles/Complete_body.svg" },
+  { id: "front", label: "Front", videoLink: "/PassengerVehicles/Front.mp4", icon: "/PassengerVehicles/Front.svg" },
+  { id: "cabin", label: "Cabin", videoLink: "/PassengerVehicles/Cabin.mp4", icon: "/PassengerVehicles/cabin.png" },
+  { id: "trunk", label: "Trunk", videoLink: "/PassengerVehicles/Trunk.mp4", icon: "/PassengerVehicles/Trunk.svg" },
+  { id: "exterior", label: "Exterior", videoLink: "/PassengerVehicles/Exterior.mp4", icon: "/PassengerVehicles/Exterior.svg" },
 ];
 
 const commercialViewOptions = [
-  { id: "completeBody", label: "Complete Body", videoLink: "https://supreme-group.vercel.app/static/media/Commercial%20Alpha.92c92d40f9116c837d1d.mp4", icon: "/CommercialVehicles/Complete_body.svg" },
-  { id: "engine", label: "Engine", videoLink: "https://supreme-group.vercel.app/static/media/Commercial-Engine.d8957f7c027ca396858e.mp4", icon: "/CommercialVehicles/Engine.svg" },
-  { id: "cabin", label: "Cabin", videoLink: "https://supreme-group.vercel.app/static/media/Commercial-Cabin.69adf15a8021267cbe8c.mp4", icon: "/CommercialVehicles/cabin.svg" },
+  { id: "completeBody", label: "Complete Body", videoLink: "/CommercialVehicles/Complete_body.mp4", icon: "/CommercialVehicles/Complete_body.svg" },
+  { id: "engine", label: "Engine", videoLink: "/CommercialVehicles/Commercial-Engine.mp4", icon: "/CommercialVehicles/Engine.svg" },
+  { id: "cabin", label: "Cabin", videoLink: "/CommercialVehicles/Commercial-Cabin.mp4", icon: "/CommercialVehicles/cabin.svg" },
 ];
 
 const Overview = () => {

@@ -24,7 +24,7 @@ body {
   }
 
 .bg-footer {
-    background-image: url("../public/FooterBackground.jpg");
+    background-image: url("/FooterBackground.jpg");
 }
 
 .bg-blueDark {
