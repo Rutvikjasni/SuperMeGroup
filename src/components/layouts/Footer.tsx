@@ -89,7 +89,7 @@ const renderFooterLinks = () => {
     <ul key={index} className="text-black list-none">
       <li className="mb-3 font-bold text-opacity-90 text-lg">{section.title}</li>
       {section.links.map((link, i) => (
-        <li key={i} className="mb-5">
+        <li key={i} className="md:mb-5">
           <a
             className="text-sm sm:text-base xl:text-base font-medium text-opacity-70 hover:text-opacity-100 focus:outline-none decoration-from-font underline-offset-4"
             href={link.href}
