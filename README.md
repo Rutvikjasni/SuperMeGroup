@@ -68,7 +68,6 @@
 ---
 
 **Challenges Faced and Potential Solutions**
-- **State Management Complexity:** Initially faced issues with global state updates. 
 - **Performance Bottlenecks:** Optimized re-renders using memoization techniques.
 - **Responsive UI Glitches:** Addressed using Tailwind’s responsive utilities.
 
