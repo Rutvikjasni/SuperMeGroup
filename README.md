@@ -43,7 +43,6 @@
 
 **Performance Optimization Techniques Employed**
 - Code splitting and lazy loading for improved load times.
-- Image optimization using Next.js' `next/image` component.
 - Memoization with `useMemo` and `useCallback` to prevent unnecessary re-renders.
 
 ---
