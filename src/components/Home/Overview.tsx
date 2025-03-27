@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-// Define types
+// Define types for vehicles and view options
 type Vehicle = {
   id: string;
   title: string;
@@ -15,7 +15,7 @@ type ViewOption = {
   icon: string;
 };
 
-// Data Collection
+// Vehicle data collection
 const vehicleData: Vehicle[] = [
   {
     id: "passenger",
@@ -31,6 +31,7 @@ const vehicleData: Vehicle[] = [
   },
 ];
 
+// View options for passenger vehicles
 const viewOptions: ViewOption[] = [
   { id: "complete", label: "Complete body", videoLink: "/PassengerVehicles/Complete_body.mp4", icon: "/PassengerVehicles/Complete_body.svg" },
   { id: "front", label: "Front", videoLink: "/PassengerVehicles/Front.mp4", icon: "/PassengerVehicles/Front.svg" },
@@ -39,6 +40,7 @@ const viewOptions: ViewOption[] = [
   { id: "exterior", label: "Exterior", videoLink: "/PassengerVehicles/Exterior.mp4", icon: "/PassengerVehicles/Exterior.svg" },
 ];
 
+// View options for commercial vehicles
 const commercialViewOptions: ViewOption[] = [
   { id: "completeBody", label: "Complete Body", videoLink: "/CommercialVehicles/Complete_body.mp4", icon: "/CommercialVehicles/Complete_body.svg" },
   { id: "engine", label: "Engine", videoLink: "/CommercialVehicles/Commercial-Engine.mp4", icon: "/CommercialVehicles/Engine.svg" },
@@ -46,19 +48,24 @@ const commercialViewOptions: ViewOption[] = [
 ];
 
 const Overview = () => {
+  // State to track the selected vehicle type
   const [activeVehicle, setActiveVehicle] = useState<"passenger" | "commercial">("passenger");
+
+  // State to track the selected view option for passenger and commercial vehicles
   const [activeView, setActiveView] = useState<string>("complete");
   const [commercialView, setCommercialView] = useState<string>("completeBody");
 
+  // Function to switch between passenger and commercial vehicles
   const handleVehicleChange = (id: "passenger" | "commercial") => {
     setActiveVehicle(id);
     if (id === "passenger") {
-      setActiveView("complete");
+      setActiveView("complete"); // Reset view for passenger vehicles
     } else {
-      setCommercialView("completeBody");
+      setCommercialView("completeBody"); // Reset view for commercial vehicles
     }
   };
 
+  // Function to get the active video link based on the selected vehicle type and view option
   const getActiveVideo = () => {
     if (activeVehicle === "passenger") {
       return viewOptions.find((opt) => opt.id === activeView)?.videoLink ?? viewOptions[0].videoLink;
@@ -69,6 +76,7 @@ const Overview = () => {
   return (
     <section className="min-h-screen bg-black py-10 md:py-20">
       <div className="container mx-auto px-4 md:px-8">
+        {/* Section Heading */}
         <div className="text-center mb-10 md:mb-16">
           <h2 className="text-white text-xl md:text-4xl leading-tight">
             Evolving the drive with <span className="font-semibold">360-degree</span>
@@ -76,7 +84,8 @@ const Overview = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center  mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center mb-10">
+          {/* Vehicle Selection Sidebar */}
           <div className="md:col-span-1 border-l-2 border-gray-700 pl-4 md:pl-6 max-h-80 overflow-y-auto w-1/2">
             {vehicleData.map((vehicle) => (
               <div
@@ -94,10 +103,14 @@ const Overview = () => {
             ))}
           </div>
 
+          {/* Video Display & View Selection */}
           <div className="md:col-span-1 flex flex-col items-center">
+            {/* Video Display */}
             <div className="w-full max-w-lg aspect-[4/3] relative">
-             <video src={getActiveVideo()} autoPlay  muted className="w-full h-full object-contain" />
+              <video src={getActiveVideo()} autoPlay muted className="w-full h-full object-contain" />
             </div>
+
+            {/* View Selection Buttons */}
             <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4 ">
               {(activeVehicle === "passenger" ? viewOptions : commercialViewOptions).map((option) => (
                 <button

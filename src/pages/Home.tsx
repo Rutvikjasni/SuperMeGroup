@@ -4,18 +4,21 @@ import Overview from "../components/Home/Overview";
 
 export default function Home() {
     return (
-      <>
+        <>
+            {/* Hero Section */}
             <section>
-             <HeroSection />
+                <HeroSection />
             </section>
+            
+            {/* Overview Section */}
             <section>
-            <Overview />
+                <Overview />
             </section>
-            {/* contact Section */}
+            
+            {/* Contact Section */}
             <section>
-                <ContactForm/>
+                <ContactForm />
             </section>
-      </>
-    )
-  }
-  
+        </>
+    );
+}

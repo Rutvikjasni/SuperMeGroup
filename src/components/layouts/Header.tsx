@@ -3,7 +3,7 @@ import React from "react";
 const Header: React.FC = () => {
   return (
     <header className="bg-gray-100 py-4 px-6 flex justify-between items-center w-full">
-      {/* Logo */}
+      {/* Logo Section */}
       <div className="text-blue-700 font-bold text-lg">
         <img
           src="Logo.svg"
@@ -13,11 +13,14 @@ const Header: React.FC = () => {
         />
       </div>
 
-      {/* Nav Items */}
+      {/* Navigation Items */}
       <div className="flex items-center space-x-4 md:space-x-6">
-        <button className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm md:text-base" >
+        {/* Contact Us Button */}
+        <button className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm md:text-base">
           Contact Us
         </button>
+
+        {/* LinkedIn Profile Link */}
         <a
           href="https://www.linkedin.com/in/rutvik-jasani-8b0404239"
           target="_blank"
